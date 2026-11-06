@@ -6,6 +6,20 @@
 [![Release Badge](https://img.shields.io/github/v/release/baconbao/dsh-mermaid-image-preview)](https://github.com/baconbao/dsh-mermaid-image-preview/releases)
 [![License Badge](https://img.shields.io/github/license/baconbao/dsh-mermaid-image-preview)](./LICENSE)
 
+> [!NOTE]
+> **Local modification (personal use):** this checkout adds sidebar document
+> previews for `.mmd` / `.mermaid` workspace files. Opening such a file renders
+> it as a diagram in a full-pane viewport instead of plain text: the diagram
+> fits the pane on open, the left mouse button pans, the wheel zooms around the
+> cursor, and a double click refits. The builtin text viewer stays selectable in
+> the toolbar's viewer menu. Implemented via the document preview's
+> `documentPreviews` registry + `sidebar.right.tab.document` keyed slot, with
+> the registration deferred through `ctx.inject` until that service is live;
+> `dsh.client.inject` gained
+> `@deepseek-ai/dsh-client-ui-sidebar-documentpreview` for load order. Local
+> harness: `node tests-local/client.local.test.mjs`. Version is bumped to
+> `0.4.1-local.*` to tell this build apart from upstream.
+
 A DeepSeek Harness Plugin for Previewing Mermaid Diagram Images
 
 Preview Mermaid syntax as images via local rendering in DSH when a chat message contains a Mermaid fenced code block (` ```mermaid ` or ` ```mmd `).
